@@ -1,0 +1,27 @@
+## 3. Person B — Audit & Scope Guard
+**Hours 0 – 5**
+
+Two reusable, well-understood components — but both must be tested rigorously before wiring in. The audit chain is load-bearing for the tamper-evidence demo; the scope guard is the core differentiator claim.
+
+### Primary Files
+- `audit.service.ts` — copy from prior work verbatim, then test
+- `scope-guard.service.ts` — adapt the NLI pattern from `nli.service.ts`, new prompt template
+- `session.service.ts` — copy from prior work verbatim
+
+### Hour 0 – 2
+- Copy `audit.service.ts` and `session.service.ts` as-is (no changes)
+- Tamper test immediately: write 5 entries → manually edit entry 3 → `verifyChain()` must report `break_at_sequence: 3` → restore → `chain_valid: true`
+  - Do not skip this. If the chain is broken here, the tamper-evidence demo scene fails.
+
+### Hour 1 – 3 (overlapping)
+- Scope Guard NLI prompt: input = declared scope + attacker's proposed tool call, output = `{authorized: boolean, confidence: number, evidence: string}`
+- Test on 10 manual cases before wiring in — minimum:
+  - In-scope: declared scope `"harmful-instruction-compliance only"` + tool call targeting `model-v1` → `authorized: true`
+  - Out-of-scope: same scope + tool call targeting a different model → `authorized: false`
+  - Out-of-scope: same scope + different jailbreak category → `authorized: false`
+
+### Interface Contracts to Deliver
+- `ScopeGuard.check(declaredScope, toolCall): Promise<{authorized, confidence, evidence}>` — locked by Hour 3
+- `AuditService.append(entry)` and `verifyChain()` — locked by Hour 2
+
+---

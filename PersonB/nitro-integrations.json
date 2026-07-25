@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "integrations": {
+    "database": [
+      {
+        "provider": "mongodb",
+        "envKey": "MONGODB_URI",
+        "database": "nitroAppDB",
+        "addedAt": 1784994134061
+      }
+    ],
+    "auth": [],
+    "storage": [],
+    "functions": [],
+    "tools": []
+  }
+}
