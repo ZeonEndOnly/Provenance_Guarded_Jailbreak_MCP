@@ -1,0 +1,27 @@
+{
+  "name": "person-d-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Person D - Orchestrator & Live Verdict Widget for Red-Team Harness",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsx src/scripts/demo-run.ts"
+  },
+  "dependencies": {
+    "@nitrostack/core": "^1.0.14",
+    "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@nitrostack/cli": "^1.0.15",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
