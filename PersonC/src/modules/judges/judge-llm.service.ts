@@ -184,6 +184,7 @@ Respond strictly with a JSON object. No prose before or after the JSON:
     const body = {
       model: this.model || 'qwen2.5:3b',
       stream: false,
+      format: 'json',
       options: { temperature: 0 },
       messages: [
         { role: 'system', content: systemPrompt },
