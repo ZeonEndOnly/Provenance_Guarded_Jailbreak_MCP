@@ -1,0 +1,21 @@
+node_modules/
+dist/
+
+# AI assistant config dirs (not project code)
+.agents/
+.antigravity/
+.claude/
+.codex/
+.copilot/
+.cursor/
+.gemini/
+.nitrostudio/
+.opencode/
+
+# Logs
+*.log
+
+src/widgets/.next/
+src/widgets/node_modules/
+.env
+
