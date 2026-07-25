@@ -189,16 +189,6 @@ Owns end-to-end coherence. Can't fully build until A (target tool) and B (scope 
 
 ---
 
-## 10. What to Say (and Not Say)
-
-### Say
-- "Every action our attacker agent takes is checked against a declared scope before execution — enforced at the tool layer, not just documented as policy."
-- "We use two independent judge signals — a different-family LLM and a non-LLM pattern matcher — validated against a hand-labeled set before trusting either on live output."
-- "Tamper any audit entry and the hash chain reports the exact sequence number that changed."
-- "This finds and helps validate jailbreaks our specific attacker surfaces — it's a continuous testing signal, not a robustness guarantee."
-
-### Never say
-- Any specific accuracy number you haven't actually measured
 - "Formally verified"
 - "This makes the model unjailbreakable" / "fully robust"
 - "Protocol-level extension" — this is an MCP server, same as everyone else's
