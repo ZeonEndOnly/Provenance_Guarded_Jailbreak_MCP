@@ -25,6 +25,8 @@ export class JudgesService {
 
   /**
    * Run dual-judge evaluation in parallel (LLM judge + Pattern judge).
+   * Note: JudgesService orchestrates evaluation and makes NO direct API calls itself;
+   * API calls are delegated to JudgeLLMService (which defaults to OpenAI gpt-4o-mini).
    * Flags disagreements for human review instead of auto-resolving.
    */
   async evaluate(prompt: string, response: string, category: string = 'general'): Promise<DualJudgeResult> {
